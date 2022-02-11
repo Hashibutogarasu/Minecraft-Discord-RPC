@@ -1,8 +1,8 @@
-package com.Hashibutogarasu.screenshottweet.mixin;
+package com.Hashibutogarasu.mcrpc.mixin;
 
-import com.Hashibutogarasu.screenshottweet.ScreenshotTweetMod;
-import net.minecraft.client.MinecraftClient;
+import com.Hashibutogarasu.mcrpc.Utils.RunRPC;
 import net.minecraft.client.gui.screen.TitleScreen;
+import net.minecraft.text.TranslatableText;
 import org.apache.logging.log4j.Logger;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -12,11 +12,11 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(TitleScreen.class)
-public class ExampleMixin {
+public class TitleMixin {
 	@Shadow @Final private static Logger LOGGER;
 
 	@Inject(at = @At("HEAD"), method = "init()V")
 	private void init(CallbackInfo info) {
-		//ScreenshotTweetMod.LOGGER.info("This line is printed by an example mod mixin!");
+		RunRPC.init(new TranslatableText("mcrpc.intitlescreen").getString());
 	}
 }

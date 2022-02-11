@@ -1,0 +1,18 @@
+{
+  "gui.mcdiscordrpc.title" : "DiscordRPCの設定",
+  "gui.mcdiscordrpc.labeltext" : "アプリケーションID",
+  "gui.mcdiscordrpc.savebutton" : "保存して閉じる",
+  "category.mcdiscordrpc.general" : "リッチプリセンスの設定",
+  "option.mcdiscordrpc.discordapplicationid" : "DiscordのアプリケーションID",
+  "option.mcdiscordrpc.showserveraddress" : "リッチプリセンスにサーバーアドレスを表示する",
+  "mcrpc.intitlescreen" : "タイトルスクリーン",
+  "mcrpc.worldselecting" : "ワールドを選択中",
+  "mcrpc.worldediting" : "ワールドを編集中",
+  "mcrpc.loading" : "読み込み中",
+  "mcrpc.closing" : "終了中",
+  "mcrpc.inmultiserver": "プレイ中 %s人がオンライン",
+  "mcrpc.singleplayer" : "シングルプレイ",
+  "mcrpc.muiltiplayserverselecting" : "サーバーを選択中",
+  "mcrpc.serverconnecting" : "サーバーに接続中",
+  "mcrpc.pausing" : "停止中"
+}

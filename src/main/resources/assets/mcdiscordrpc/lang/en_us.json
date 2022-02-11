@@ -1,0 +1,18 @@
+{
+  "gui.mcdiscordrpc.title" : "DiscordRPC Settings",
+  "gui.mcdiscordrpc.labeltext" : "Application ID",
+  "gui.mcdiscordrpc.savebutton" : "Save and Close",
+  "category.mcdiscordrpc.general" : "Discord RPC Setting",
+  "option.mcdiscordrpc.discordapplicationid" : "Discord Application ID",
+  "option.mcdiscordrpc.showserveraddress" : "Show server Address on Rich Presence",
+  "mcrpc.intitlescreen" : "Title Screen",
+  "mcrpc.worldselecting" : "Selecting World",
+  "mcrpc.worldediting" : "Editing World",
+  "mcrpc.loading" : "Loading",
+  "mcrpc.closing" : "Closing",
+  "mcrpc.inmultiserver" : "Playing %s players is online",
+  "mcrpc.singleplayer" : "Single Play",
+  "mcrpc.muiltiplayserverselecting" : "Selecting Servers",
+  "mcrpc.serverconnecting" : "Connecting",
+  "mcrpc.pausing" : "Pausing"
+}
