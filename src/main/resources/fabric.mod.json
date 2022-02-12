@@ -1,10 +1,9 @@
 {
   "schemaVersion": 1,
-  "id": "screenshottweet",
+  "id": "mcdiscordrpc",
   "version": "${version}",
-
-  "name": "ScreenshotTweet",
-  "description": "You can Tweet Minecraft screenshots in the game.",
+  "name": "Minecraft DiscordRPC",
+  "description": "If you are running Discord Desctop Application,The Rich Presence shows Minecraft Game Descrption.",
   "authors": [
     "Hashibutogarasu"
   ],
@@ -13,21 +12,18 @@
     "sources": ""
   },
 
-  "license": "CC0-1.0",
-  "icon": "assets/screenshottweet/textures/icon.png",
+  "license": "MIT",
+  "icon": "assets/mcdiscordrpc/textures/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.Hashibutogarasu.screenshottweet.ScreenshotTweetMod"
+      "com.Hashibutogarasu.mcrpc.MCRPCMod"
     ],
     "client": [
-      "com.Hashibutogarasu.screenshottweet.ScreenshotTweetModClient"
+      "com.Hashibutogarasu.mcrpc.MCRPCModClient"
     ]
   },
-  "modmenu": [
-    "com.Hashibutogarasu.screenshottweet.guis.Configs.ScreenshotTweetModMenuIntegration"
-  ],
   "mixins": [
     "modid.mixins.json"
   ],

@@ -11,7 +11,7 @@ import org.lwjgl.glfw.GLFW;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class MCRPCTweetModClient implements ClientModInitializer {
+public class MCRPCModClient implements ClientModInitializer {
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
 	// That way, it's clear which mod wrote info, warnings, and errors.
@@ -30,8 +30,6 @@ public class MCRPCTweetModClient implements ClientModInitializer {
             while (keyBinding.wasPressed()) {
                 Configs configs = new Configs();
                 MinecraftClient.getInstance().setScreen(configs.screen);
-                //MinecraftClient.getInstance().setScreen(new Tweetscreen(new TweetScreenGUI()));
-                //client.player.sendSystemMessage(new LiteralText("Key 1 was pressed!"), UUID.randomUUID());
             }
         });
     }

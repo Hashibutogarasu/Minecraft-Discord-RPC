@@ -1,4 +1,6 @@
 {
+  "key.mcrpc.showsetting" : "Show DiscordRPC Settings",
+  "category.mcrpc.keybinds" : "MCRPC",
   "gui.mcdiscordrpc.title" : "DiscordRPC Settings",
   "gui.mcdiscordrpc.labeltext" : "Application ID",
   "gui.mcdiscordrpc.savebutton" : "Save and Close",
