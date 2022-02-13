@@ -9,9 +9,9 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(EditWorldScreen.class)
-public class EditWorlMixin {
+public class EditWorldMixin {
     @Inject(at = @At("HEAD"), method = "init()V")
     private void init(CallbackInfo info) {
-        RunRPC.update(new TranslatableText("mcrpc.worldediting").getString());
+        RunRPC.login(new TranslatableText("mcrpc.worldediting").getString());
     }
 }

@@ -12,8 +12,8 @@
   "mcrpc.worldediting" : "Editing World",
   "mcrpc.loading" : "Loading",
   "mcrpc.closing" : "Closing",
-  "mcrpc.inmultiserver" : "Playing %s players is online",
-  "mcrpc.singleplayer" : "Single Play",
+  "mcrpc.inmultiserver" : "MuiltiPlay %s players is online",
+  "mcrpc.singleplayer" : "Single Play (%s,%s,%s)",
   "mcrpc.muiltiplayserverselecting" : "Selecting Servers",
   "mcrpc.serverconnecting" : "Connecting",
   "mcrpc.pausing" : "Pausing"

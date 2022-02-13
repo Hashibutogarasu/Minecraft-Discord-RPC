@@ -1,15 +1,11 @@
 package com.Hashibutogarasu.mcrpc.rpc;
 
-
-import com.Hashibutogarasu.mcrpc.Config.Configs;
 import com.Hashibutogarasu.mcrpc.MCRPCMod;
 import net.arikia.dev.drpc.DiscordEventHandlers;
 import net.arikia.dev.drpc.DiscordRPC;
 import net.arikia.dev.drpc.DiscordRichPresence;
 import net.arikia.dev.drpc.DiscordUser;
 import net.arikia.dev.drpc.callbacks.ReadyCallback;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.util.math.BlockPos;
 
 import static com.Hashibutogarasu.mcrpc.rpc.StatusObject.status;
 
@@ -18,13 +14,11 @@ public class RPCMain implements ReadyCallback {
     public RPCMain(String ID,String Status){
 
         try {
-
             status = Status;
 
             DiscordEventHandlers handlers = new DiscordEventHandlers.Builder().setReadyEventHandler((user) -> {
                 MCRPCMod.LOGGER.info("Welcome " + user.username + "#" + user.discriminator + ".");
                 DiscordRichPresence.Builder presence = new DiscordRichPresence.Builder(status);
-                presence.setDetails("");
                 DiscordRPC.discordUpdatePresence(presence.build());
             }).build();
 
@@ -32,7 +26,6 @@ public class RPCMain implements ReadyCallback {
             DiscordRPC.discordRunCallbacks();
 
             DiscordRichPresence.Builder presence = new DiscordRichPresence.Builder(status);
-            presence.setDetails("");
             DiscordRPC.discordUpdatePresence(presence.build());
         }
         catch (Exception e){

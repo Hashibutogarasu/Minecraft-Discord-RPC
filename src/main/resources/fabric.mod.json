@@ -3,7 +3,7 @@
   "id": "mcdiscordrpc",
   "version": "${version}",
   "name": "Minecraft DiscordRPC",
-  "description": "If you are running Discord Desctop Application,The Rich Presence shows Minecraft Game Descrption.",
+  "description": "If you are running Discord Desctop Application,the Rich Presence shows Minecraft Game Descrption.",
   "authors": [
     "Hashibutogarasu"
   ],
@@ -11,17 +11,15 @@
     "homepage": "",
     "sources": ""
   },
-
   "license": "MIT",
   "icon": "assets/mcdiscordrpc/textures/icon.png",
-
-  "environment": "*",
+  "environment": "client",
   "entrypoints": {
-    "main": [
-      "com.Hashibutogarasu.mcrpc.MCRPCMod"
-    ],
     "client": [
       "com.Hashibutogarasu.mcrpc.MCRPCModClient"
+    ],
+    "modmenu": [
+      "com.Hashibutogarasu.mcrpc.ModMenuIntegration"
     ]
   },
   "mixins": [

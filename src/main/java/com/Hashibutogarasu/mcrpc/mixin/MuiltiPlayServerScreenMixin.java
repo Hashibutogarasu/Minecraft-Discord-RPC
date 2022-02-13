@@ -13,11 +13,11 @@ public class MuiltiPlayServerScreenMixin {
 
     @Inject(at = @At("HEAD"), method = "init()V")
     private void init(CallbackInfo info) {
-        RunRPC.init(new TranslatableText("mcrpc.muiltiplayserverselecting").getString());
+        RunRPC.login(new TranslatableText("mcrpc.muiltiplayserverselecting").getString());
     }
 
     @Inject(at = @At("HEAD"), method = "connect()V")
     private void connect(CallbackInfo info) {
-        RunRPC.init(new TranslatableText("mcrpc.serverconnecting").getString());
+        RunRPC.login(new TranslatableText("mcrpc.serverconnecting").getString());
     }
 }

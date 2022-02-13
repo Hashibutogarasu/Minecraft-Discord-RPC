@@ -1,6 +1,8 @@
 package com.Hashibutogarasu.mcrpc.Config;
 
 import com.Hashibutogarasu.mcrpc.DiscordID;
+import com.Hashibutogarasu.mcrpc.MCRPCMod;
+import com.Hashibutogarasu.mcrpc.Utils.RunRPC;
 import com.Hashibutogarasu.mcrpc.gui.Screen.KeyConfigScreen;
 import com.Hashibutogarasu.mcrpc.rpc.RPCMain;
 import me.shedaniel.clothconfig2.api.ConfigBuilder;
@@ -13,15 +15,19 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.concurrent.atomic.AtomicReference;
 
-public class Configs {
-    public ConfigBuilder builder = ConfigBuilder.create()
-            .setParentScreen(new KeyConfigScreen(new TranslatableText("gui.mcdiscordrpc.title")))
-            .setTitle(new TranslatableText("gui.mcdiscordrpc.title"));;
-    public Screen screen;
+public class ClothConfigScreenFactory {
+
     public static AtomicReference<String> currentValue = new AtomicReference<>();
     public static RPCMain rpcmain = new RPCMain(currentValue.get(), DiscordID.ApplicationID);
 
-    public Configs(){
+    public ClothConfigScreenFactory(){
+
+    }
+    public static Screen genConfig(Screen parent){
+
+        ConfigBuilder builder = ConfigBuilder.create()
+                .setParentScreen(new KeyConfigScreen(new TranslatableText("gui.mcdiscordrpc.title")))
+                .setTitle(new TranslatableText("gui.mcdiscordrpc.title"));
         builder.setSavingRunnable(() -> {
             try {
                 File file = new File("discord-rpc-application.txt");
@@ -30,15 +36,19 @@ public class Configs {
                 filewriter.write(currentValue.get());
                 filewriter.close();
 
+                DiscordID.ApplicationID = currentValue.get();
+//                rpcmain = new RPCMain(DiscordID.ApplicationID,"Logined");
+                RunRPC.login("Logined");
 
-                rpcmain = new RPCMain(currentValue.get(),"");
+                MCRPCMod.LOGGER.info("Loggined as" + DiscordID.ApplicationID);
 
-            } catch (IOException e) {
+            } catch (IOException ignored) {
 
             }
         });
 
         ConfigCategory general = builder.getOrCreateCategory(new TranslatableText("category.mcdiscordrpc.general"));
+        builder.setParentScreen(parent);
         ConfigEntryBuilder entryBuilder = builder.entryBuilder();
 
         currentValue = new AtomicReference<>(DiscordID.ApplicationID);
@@ -48,6 +58,6 @@ public class Configs {
                 .setSaveConsumer(newValue -> currentValue.set(newValue)) // Recommended: Called when user save the config
                 .build()); // Builds the option entry for cloth config
 
-        screen = builder.build();
+        return builder.build();
     }
 }

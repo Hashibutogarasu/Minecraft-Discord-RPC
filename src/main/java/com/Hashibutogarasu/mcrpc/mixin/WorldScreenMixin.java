@@ -10,24 +10,25 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import java.util.List;
+import java.util.Objects;
 
 @Mixin(World.class)
-public class WorldScreen {
+public class WorldScreenMixin {
     @Inject(at = @At("HEAD"), method = "isClient")
     private void init(CallbackInfoReturnable<Boolean> cir) {
         try{
             if(!MinecraftClient.getInstance().isInSingleplayer()) {
-                List<? extends PlayerEntity> players = MinecraftClient.getInstance().player.world.getPlayers();
-                RunRPC.update(new TranslatableText("mcrpc.inmultiserver",players.stream().count()).getString());
+                List<? extends PlayerEntity> players = MinecraftClient.getInstance().player != null ? MinecraftClient.getInstance().player.world.getPlayers() : null;
+                RunRPC.login(new TranslatableText("mcrpc.inmultiserver", (long) Objects.requireNonNull(players).size()).getString());
             }
             else{
-                int x = (int)MinecraftClient.getInstance().player.getPos().x;
-                int y = (int)MinecraftClient.getInstance().player.getPos().y;
-                int z = (int)MinecraftClient.getInstance().player.getPos().z;
-                RunRPC.update(new TranslatableText("mcrpc.singleplayer",x,y,z).getString());
+                int x = (int) (MinecraftClient.getInstance().player != null ? MinecraftClient.getInstance().player.getPos().x : 0);
+                int y = (int) (MinecraftClient.getInstance().player != null ? MinecraftClient.getInstance().player.getPos().y : 0);
+                int z = (int) (MinecraftClient.getInstance().player != null ? MinecraftClient.getInstance().player.getPos().z : 0);
+                RunRPC.login(new TranslatableText("mcrpc.singleplayer",x,y,z).getString());
             }
         }
-        catch(Exception e){
+        catch(Exception ignored){
 
         }
     }

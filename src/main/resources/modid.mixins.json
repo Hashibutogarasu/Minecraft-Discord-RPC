@@ -3,16 +3,15 @@
   "minVersion": "0.8",
   "package": "com.Hashibutogarasu.mcrpc.mixin",
   "compatibilityLevel": "JAVA_17",
-  "mixins": [
+  "client": [
     "TitleScreenMixin",
     "ClientMixin",
     "SelectWorldMixin",
-    "EditWorlMixin",
-    "WorldScreen",
-    "MuiltiPlayServerScreenMixin"
-  ],
-  "client": [
-
+    "EditWorldMixin",
+    "WorldScreenMixin",
+    "MuiltiPlayServerScreenMixin",
+    "SingleWorldLoadingMixin",
+    "WorldLoadedMixin"
   ],
   "injectors": {
     "defaultRequire": 1

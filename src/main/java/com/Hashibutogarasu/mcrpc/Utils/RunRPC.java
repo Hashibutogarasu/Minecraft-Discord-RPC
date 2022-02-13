@@ -1,9 +1,8 @@
 package com.Hashibutogarasu.mcrpc.Utils;
 
-import com.Hashibutogarasu.mcrpc.Config.Configs;
+import com.Hashibutogarasu.mcrpc.Config.ClothConfigScreenFactory;
 import com.Hashibutogarasu.mcrpc.DiscordID;
 import com.Hashibutogarasu.mcrpc.rpc.RPCMain;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -11,7 +10,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class RunRPC {
-    public static void init(String Status){
+    public static void login(String Status){
         try {
             Path file = Paths.get("discord-rpc-application.txt");
             DiscordID.ApplicationID = Files.readString(file);
@@ -20,7 +19,7 @@ public class RunRPC {
                 DiscordID.ApplicationID = "";
             }
 
-            Configs.rpcmain = new RPCMain(DiscordID.ApplicationID,Status);
+            ClothConfigScreenFactory.rpcmain = new RPCMain(DiscordID.ApplicationID,Status);
 
         } catch (FileNotFoundException e) {
 
