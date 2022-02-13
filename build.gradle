@@ -22,7 +22,8 @@ repositories {
 		url = "https://server.bbkr.space/artifactory/libs-release"
 	}
 	maven { url "https://maven.shedaniel.me/" }
-	maven { url 'https://jitpack.io' }
+	maven { url "https://jitpack.io" }
+	maven { url "https://maven.terraformersmc.com/releases/" }
 }
 
 dependencies {
@@ -40,6 +41,9 @@ dependencies {
 
 	implementation 'com.github.Vatuu:discord-rpc:1.6.2'
 	include 'com.github.Vatuu:discord-rpc:1.6.2'
+
+	// Mod Menu, to add the hook for a config screen
+	modImplementation "com.terraformersmc:modmenu:${project.modmenu_version}"
 }
 
 processResources {
