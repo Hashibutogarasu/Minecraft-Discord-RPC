@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "id": "mcdiscordrpc",
   "version": "${version}",
-  "name": "Minecraft DiscordRPC",
-  "description": "If you are running Discord Desctop Application,the Rich Presence shows Minecraft Game Descrption.",
+  "name": "MCDiscordRPC",
+  "description": "If you are running Discord desktop application,the Rich Presence shows Minecraft game descrption.",
   "authors": [
     "Hashibutogarasu"
   ],
   "contact": {
-    "homepage": "",
-    "sources": ""
+    "homepage": "https://github.com/Hashibutogarasu/",
+    "sources": "https://github.com/Hashibutogarasu/Minecraft-Discord-RPC"
   },
   "license": "MIT",
   "icon": "assets/mcdiscordrpc/textures/icon.png",
