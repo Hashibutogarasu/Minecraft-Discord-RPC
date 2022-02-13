@@ -3,7 +3,7 @@
   "id": "mcdiscordrpc",
   "version": "${version}",
   "name": "MCDiscordRPC",
-  "description": "If you are running Discord desktop application,the Rich Presence shows Minecraft game descrption.",
+  "description": "If you are running Discord desktop application,the Rich Presence shows Minecraft game description.",
   "authors": [
     "Hashibutogarasu"
   ],
