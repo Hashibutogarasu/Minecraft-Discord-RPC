@@ -12,6 +12,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class EditWorlMixin {
     @Inject(at = @At("HEAD"), method = "init()V")
     private void init(CallbackInfo info) {
-        RunRPC.init(new TranslatableText("mcrpc.worldediting").getString());
+        RunRPC.update(new TranslatableText("mcrpc.worldediting").getString());
     }
 }
